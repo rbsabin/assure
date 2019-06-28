@@ -1,0 +1,16 @@
+{
+  "name": "assureautomationcypress",
+  "version": "1.0.0",
+  "description": "Assure Glassboard Application Automation using Cypress Testing Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^3.3.1"
+  }
+}

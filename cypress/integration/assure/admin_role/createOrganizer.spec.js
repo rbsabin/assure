@@ -6,8 +6,8 @@ describe('Admin ', () => {
         cy.get('.submit-button').click()
     })
     it('should land on dashboard page', () => {
-            cy.url().should('eq', 'https://gb-client-spv-qa.assure.co/dashboard')
-            cy.get('.navbar-content').should('be.visible')
+        cy.url().should('eq', 'https://gb-client-spv-qa.assure.co/dashboard')
+        cy.get('.navbar-content').should('be.visible')
     })
     it('should open profile menu', () => {
         cy.get('#profileButton').click()

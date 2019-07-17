@@ -2,7 +2,7 @@
 
     "viewportWidth": 1366,
     "viewportHeight": 768,
-    "baseUrl": "https://gb-client-spv-qa.assure.co",
+    "baseUrl": "https://gb-client-spv-qa.assure.co/admin/login",
     "defaultCommandTimeout":30000,
     "execTimeout": 30000,
     "taskTimeout": 30000,

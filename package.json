@@ -1,0 +1,24 @@
+{
+  "name": "assure",
+  "version": "1.0.0",
+  "description": "Assure Glassboard application automation usong Cypress Testing tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbsabin/assure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbsabin/assure/issues"
+  },
+  "homepage": "https://github.com/rbsabin/assure#readme",
+  "devDependencies": {
+    "cypress": "^3.4.0"
+  }
+}

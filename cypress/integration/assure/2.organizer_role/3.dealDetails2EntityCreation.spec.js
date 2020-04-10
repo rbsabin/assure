@@ -1,7 +1,7 @@
 describe('Organizer login', () => {
     beforeEach(() => {
         cy.visit('/')
-        cy.get('#mat-input-0').type("cytester")
+        cy.get('#mat-input-0').type("cypressadmin")
         cy.get('#mat-input-1').type("Assure123!")
         cy.get('.submit-button').click()
         cy.wait(5000)
@@ -16,15 +16,16 @@ describe('Organizer login', () => {
         cy.get('.mat-horizontal-stepper-header-container').contains('Entity Creation').click()
         cy.get('[formcontrolname="limitedEntityType"]').contains('Master / Series').click()
         cy.get('[formcontrolname="masterEntity"]').click();
-        cy.get('mat-option').contains('Food').then(option => {
-            cy.wrap(option).contains('Food');        
+        cy.get('mat-option').contains('Jackie').then(option => {
+            cy.wrap(option).contains('Jackie');        
             option[0].click(); 
-            cy.get('[formcontrolname="masterEntity"]').contains('Food')  
+            cy.get('[formcontrolname="masterEntity"]').contains('Jackie')  
           });
         cy.get('[formcontrolname="legalName"]').clear().type('serve')
         cy.get('.mat-horizontal-content-container').contains('Save').click()
 
         cy.get('#mat-dialog-0').should('contain','No').and('contain','Yes')
         cy.get('[type="submit"]').click()
+        cy.wait(1500)
     })
 })

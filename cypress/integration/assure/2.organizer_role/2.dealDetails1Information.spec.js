@@ -3,7 +3,7 @@ import 'cypress-file-upload';
 describe('Organizer login', () => {
     beforeEach(() => {
         cy.visit('/')
-        cy.get('#mat-input-0').type("cytester")
+        cy.get('#mat-input-0').type("cypressadmin")
         cy.get('#mat-input-1').type("Assure123!")
         cy.get('.submit-button').click()
         cy.wait(5000)
@@ -35,10 +35,10 @@ describe('Organizer login', () => {
         cy.get('.mat-tab-labels').contains('Details').click({ force: true })
         cy.get('.mat-card').contains('Deal Information')
         cy.get('[formcontrolname="fundManager"]').click();
-        cy.get('mat-option').contains('Robb Kunz').then(option => {
-            cy.wrap(option).contains('Robb Kunz');        
+        cy.get('mat-option').contains('Mike Tyson').then(option => {
+            cy.wrap(option).contains('Mike Tyson');        
             option[0].click(); 
-            cy.get('[formcontrolname="fundManager"]').contains('Robb Kunz')  
+            cy.get('[formcontrolname="fundManager"]').contains('Mike Tyson')  
           });
     })
     it('should select and fill number of asset type', () => {
@@ -73,6 +73,7 @@ describe('Organizer login', () => {
             option[0].click(); 
             cy.get('[formcontrolname="portfolioState"]').contains('Utah')  
         })
+        cy.wait(2000)
         cy.get('.content-container > [fxlayout="row"]').contains('Save').click()
         cy.wait(2000)
     })
@@ -105,11 +106,17 @@ describe('Organizer login', () => {
         cy.get('[formcontrolname="street"]').clear().type('CypressCarryStreet')
         cy.get('[formcontrolname="city"]').clear().type('CypressCity')
         cy.get('[formcontrolname="country"]').click()
-            cy.get('mat-option').contains('Nepal').then(option => {
-                cy.wrap(option).contains('Nepal');        
+            cy.get('mat-option').contains('United States').then(option => {
+                cy.wrap(option).contains('United States');        
                 option[0].click(); 
-                cy.get('[formcontrolname="country"]').contains('Nepal')  
-            })        
+                cy.get('[formcontrolname="country"]').contains('United States')  
+            })
+        cy.get('[formcontrolname="state"]').click()
+            cy.get('mat-option').contains('Utah').then(option => {
+                cy.wrap(option).contains('Utah');        
+                option[0].click(); 
+                cy.get('[formcontrolname="state"]').contains('Utah')  
+            })     
         cy.get('[formcontrolname="zip"]').clear().type('33603')
         cy.get('#mat-dialog-0').contains('Save').should('be.enabled')
         cy.get('#mat-dialog-0').contains('Save').click()        

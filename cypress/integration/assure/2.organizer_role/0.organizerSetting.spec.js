@@ -1,7 +1,7 @@
 describe('Organizer login', () => {
     beforeEach(() => {
         cy.visit('/')
-        cy.get('#mat-input-0').type("cytester")
+        cy.get('#mat-input-0').type("cypressadmin")
         cy.get('#mat-input-1').type("Assure123!")
         cy.get('.submit-button').click()
         cy.wait(5000)
@@ -43,24 +43,32 @@ describe('Organizer login', () => {
     it('should add New Fund Manager', () => {
         cy.get('.mat-menu-content').contains('Organizer Settings').click()
         cy.get('.fundManager-btn').click()                                                           
-        cy.get('#mat-input-22').clear().type('Mr.')                                                           // Title
-        cy.get('#mat-input-23').clear().type('Robb')                                                           // First name
-        cy.get('#mat-input-24').clear().type('Kunz')                                                         // Last name  
+        cy.get('#mat-input-22').type('Mr.')                                                           // Title
+        cy.get('#mat-input-23').type('Mike')                                                           // First name
+        cy.get('#mat-input-24').type('Tyson')                                                         // Last name  
         cy.get('.save-button').should('be.disabled')
-        cy.get('#mat-input-25').clear().type('tester04@sevadev.com')                                                         // Email  
+        cy.get('#mat-input-25').type('tester04@sevadev.com')                                                         // Email  
         cy.get('.save-button').click()
         cy.wait(2000)
     })
     // it('should add New Master Entity', () => {
     //     cy.get('.mat-menu-content').contains('Organizer Settings').click()
     //     cy.get('.masterEntity-btn').click()                                                           
-    //     cy.get('#mat-input-22').clear().type('Json')                                                           // Master Entity name
-    //     cy.get('#mat-select-7').click()                                                          // Entity Type
-    //     cy.get('#mat-option-557').click()
-    //     cy.get('#mat-input-23').clear().type('234567765432')                                                         // EIN 
+    //     cy.get('#mat-input-22').type('Jackie')                                                           // Master Entity name
+    //     cy.get('[formcontrolname="type"]').click()
+    //         cy.get('mat-option').contains('Limited Liability Company').then(option => {
+    //             cy.wrap(option).contains('Limited Liability Company');                                                            // Entity Type
+    //             option[0].click(); 
+    //             cy.get('[formcontrolname="type"]').contains('Limited Liability Company')  
+    //         }); 
+    //     cy.get('#mat-input-23').type('234567765432')                                                         // EIN 
     //     cy.get('.save-button').should('be.disabled')
-    //     cy.get('#mat-select-8').click()                                         // Place of formation  
-    //     cy.get('#mat-option-559').click()
+    //     cy.get('[formcontrolname="location"]').click()
+    //         cy.get('mat-option').contains('Utah').then(option => {
+    //             cy.wrap(option).contains('Utah');                                                            // Place of formation
+    //             option[0].click(); 
+    //             cy.get('[formcontrolname="location"]').contains('Utah')  
+    //         }); 
     //     cy.get('.save-button').click()
     //     cy.wait(2000)
     // })

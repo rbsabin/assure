@@ -43,10 +43,10 @@ describe('Admin ', () => {
             });        
         cy.get('[formcontrolname="userFirstName"]').type('Seva')
         cy.get('[formcontrolname="userLastName"]').type('Cypress')
-        cy.get('[formcontrolname="userEmail"]').type('tester09@sevadev.com')
+        cy.get('[formcontrolname="userEmail"]').type('tester04@sevadev.com')
         cy.get('[formcontrolname="userTitle"]').type('Mr.')
         cy.get('.mat-dialog-actions > :nth-child(2)').should('be.enabled')
-        // cy.get('.mat-dialog-actions > :nth-child(2)').click()                // enable this section to invite new organizer
+        // cy.get('.mat-dialog-actions > :nth-child(2)').click()                                     // enable this section to invite new organizer
         cy.get('.mat-dialog-actions > :nth-child(1)').click()
     })
 

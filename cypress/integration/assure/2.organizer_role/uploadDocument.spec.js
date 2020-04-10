@@ -3,7 +3,7 @@ import 'cypress-file-upload';
 describe('Organizer login', () => {
     beforeEach(() => {
         cy.visit('/')
-        cy.get('#mat-input-0').type("cytester")
+        cy.get('#mat-input-0').type("cypressadmin")
         cy.get('#mat-input-1').type("Assure123!")
         cy.get('.submit-button').click()
         cy.wait(5000)
@@ -28,8 +28,11 @@ describe('Organizer login', () => {
             )
         })
         cy.get('.upload-view').contains('UPLOAD').click()
-        cy.get('#temp-spv-upload').contains('SUBMIT').should('be.disabled')
-        cy.get('#temp-spv-upload').contains('AngelList').should('be.enabled').click()
-        cy.get('#temp-spv-upload').contains('SUBMIT').should('be.enabled').click()       
+        cy.get('.button-options').contains('SUBMIT').should('be.disabled')
+        cy.get('[formcontrolname="associatedDeal"]').click()
+        cy.get('#mat-option-1').click()
+        cy.get('.button-options').contains('SUBMIT').should('be.enabled').click()     .wait(1000)
+        cy.get('.mat-snack-bar-container').contains('Documents successfully uploaded.')
+        
     })
 })

@@ -3,7 +3,7 @@ import 'cypress-file-upload';
 describe('Organizer login', () => {
     beforeEach(() => {
         cy.visit('/')
-        cy.get('#mat-input-0').type("cytester")
+        cy.get('#mat-input-0').type("cypressadmin")
         cy.get('#mat-input-1').type("Assure123!")
         cy.get('.submit-button').click()
         cy.wait(5000)

@@ -1,9 +1,7 @@
-import 'cypress-file-upload';
-
 describe('Organizer login', () => {
     beforeEach(() => {
         cy.visit('/')
-        cy.get('#mat-input-0').type("cytester")
+        cy.get('#mat-input-0').type("cypressadmin")
         cy.get('#mat-input-1').type("Assure123!")
         cy.get('.submit-button').click()
         cy.wait(5000)
@@ -22,16 +20,17 @@ describe('Organizer login', () => {
             option[0].click(); 
             cy.get('[formcontrolname="arbitrationState"]').contains('Utah')  
           });
-          cy.get('[formcontrolname="arbitrationCity"]').type('Provo')
+          cy.get('[formcontrolname="arbitrationCity"]').clear().type('Provo')
         cy.get('[formcontrolname="hasManagementFee"]').contains('Yes').click()
-        cy.get('[formcontrolname="managementFeeAmount"]').type('44')
+        cy.get('[formcontrolname="managementFeeAmount"]').clear().type('44')
         cy.get('[formcontrolname="managementFeeFrequency"]').click();
         cy.get('mat-option').contains('Quarterly').then(option => {
             cy.wrap(option).contains('Quarterly');        
             option[0].click(); 
             cy.get('[formcontrolname="managementFeeFrequency"]').contains('Quarterly')  
           });
-        cy.get('[formcontrolname="managementFeeDuration"]').type('5')
+        cy.get('[formcontrolname="managementFeeDuration"]').clear().type('5')
         cy.get('.ng-invalid > [fxlayout="row"]').contains('Save').click()
     })
+    
 })
